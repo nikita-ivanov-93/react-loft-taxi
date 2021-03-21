@@ -1,20 +1,20 @@
 import React from 'react';
 // import './App.css';
-import {Home} from './Home.jsx';
-import {About} from './About';
+import Login from './Login.jsx';
+import {Map} from './Map';
 import {Profile} from './Profile';
 
 
 const Pages = {
-  home: <Home/>,
-  about: <About/>,
+  login: <Login/>,
+  map: <Map/>,
   profile: <Profile/>
 }
 
 class App extends React.Component {
 
   state = {
-    currentPage: 'home'
+    currentPage: 'login'
   }
   navigateTo = (page) => {
     this.setState({currentPage: page})
@@ -26,18 +26,18 @@ class App extends React.Component {
       <nav>
         <ul>
           <li>
-            <button onClick={() => {this.navigateTo('home')}}>
-              Home
-            </button>
-          </li>
-          <li>
-            <button onClick={() => {this.navigateTo('about')}}>
-              About
+            <button onClick={() => {this.navigateTo('map')}}>
+              Карта
             </button>
           </li>
           <li>
             <button onClick={() => {this.navigateTo('profile')}}>
-              Profile
+              Профиль
+            </button>
+          </li>
+          <li>
+            <button onClick={() => {this.navigateTo('login')}}>
+              Выйти
             </button>
           </li>
         </ul>

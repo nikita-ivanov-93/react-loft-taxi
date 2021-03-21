@@ -1,11 +1,11 @@
 import React from 'react';
-import {Home} from './Home';
+import Login from './Login';
 import {render} from '@testing-library/react'
 
 
 describe("Home", () => {
   it("renders correctly", () => {
-    const { getByLabelText } = render(<Home/>)
+    const { getByLabelText } = render(<Login/>)
     expect(getByLabelText('Email:')).toHaveAttribute('name','email')
     expect(getByLabelText('Password:')).toHaveAttribute('name','password')
   })
