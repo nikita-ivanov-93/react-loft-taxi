@@ -1,7 +1,7 @@
 import React from 'react';
 // import './App.css';
-import Login from './Login.jsx';
-import Registration from './Registration.jsx';
+import {Login} from './Login.jsx';
+import {Registration} from './Registration.jsx';
 import {Map} from './Map';
 import {Profile} from './Profile';
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     this.setState({currentPage: page})
   }
 
-  
+
 
   render() {
     return <>
