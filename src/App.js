@@ -1,12 +1,14 @@
 import React from 'react';
 // import './App.css';
 import Login from './Login.jsx';
+import Registration from './Registration.jsx';
 import {Map} from './Map';
 import {Profile} from './Profile';
 
 
 const Pages = {
   login: <Login/>,
+  registration: <Registration/>,
   map: <Map/>,
   profile: <Profile/>
 }
@@ -19,6 +21,8 @@ class App extends React.Component {
   navigateTo = (page) => {
     this.setState({currentPage: page})
   }
+
+  
 
   render() {
     return <>

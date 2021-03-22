@@ -1,25 +1,8 @@
 import React from 'react';
 import './Registration.css';
-import Login from './Login';
-import {Map} from './Map';
 
-const Pages = {
-  map: <Map/>,
-  login: <Login/>
-}
-
-class Registration extends React.Component {
-
-  state = {
-    currentPage: 'registration'
-  }
-  navigateTo = (page) => {
-    this.setState({currentPage: page})
-    
-  }
-
-  render() {
-    return <>
+export const Registration = () => {
+  return (
     <div className='registration'>
       <form className='registration__form' onSubmit={(e) => {e.preventDefault(); this.navigateTo('map')}}>
         <h3 className='title'>Регистрация</h3>
@@ -35,12 +18,6 @@ class Registration extends React.Component {
           <button onClick={(e) => {e.preventDefault(); this.navigateTo('login')}}>Войти</button>
         </div>
       </form>
-      <section>
-        {Pages[this.state.currentPage]}
-      </section>
     </div>
-    </>;
-  }
-}
-
-export default Registration;
+  );
+};
