@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <header>
           <nav>
             <ul>
@@ -68,7 +68,7 @@ class App extends Component {
             {Pages[this.state.currentPage]({ navigate: this.navigateTo })}
           </section>
         </main>
-      </>
+      </div>
     )
   }
 }

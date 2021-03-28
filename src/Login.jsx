@@ -19,8 +19,7 @@ export class Login extends Component {
   }
   render() {
     return (
-      <>
-        {this.props.isLoggedIn  ? (
+        this.props.isLoggedIn  ? (
           <p>
             You are logged in{" "}
             <button onClick={this.goToProfile}>
@@ -43,10 +42,9 @@ export class Login extends Component {
             </div>
           </form>
         </div>
-        )};
-      </>
-    );
-  }
+      )
+    )
+  };
 };
 
 Login.propTypes = {
