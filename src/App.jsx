@@ -28,6 +28,13 @@ class App extends Component {
       this.setState({currentPage: "login"})
     }
   }
+
+  logout = (e) => {
+    e.preventDefault();
+    this.props.logOut();
+    this.navigateTo("login");
+  }
+
   render() {
     return (
       <>
@@ -49,9 +56,7 @@ class App extends Component {
                 </button>
               </li>
               <li>
-                <button onClick={() => {
-                      this.navigateTo("login");
-                    }}>
+                <button onClick={this.logout}>
                   Выйти
                 </button>
               </li>
@@ -69,6 +74,7 @@ class App extends Component {
 }
 
 App.propTypes = {
+  logOut: PropTypes.func,
   isLoggedIn : PropTypes.bool
 };
 
