@@ -22,7 +22,7 @@ class App extends Component {
   };
 
   navigateTo = (page) => {
-    if (this.props.isLogIn) {
+    if (this.props.isLoggedIn ) {
       this.setState({currentPage: page})
     } else {
       this.setState({currentPage: "login"})
@@ -69,7 +69,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  isLogIn: PropTypes.bool
+  isLoggedIn : PropTypes.bool
 };
 
 

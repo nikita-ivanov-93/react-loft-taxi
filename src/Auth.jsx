@@ -3,7 +3,7 @@ import React from 'react';
 export const Auth = React.createContext();
 
 export const AuthProvider = ({children}) => {
-  const [isLogIn, setIsLogIn] = React.useState(false);
+  const [isLoggedIn , setIsLogIn] = React.useState(false);
 
   const logIn = (email, password) => {
     if (email !== "valid@email.com" || password !== "correctpassword") {
@@ -17,7 +17,7 @@ export const AuthProvider = ({children}) => {
   }
 
   return (
-    <Auth.Provider value={{logIn, logOut, isLogIn}}>
+    <Auth.Provider value={{logIn, logOut, isLoggedIn }}>
       {children}
     </Auth.Provider>
   )

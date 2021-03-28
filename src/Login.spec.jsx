@@ -14,7 +14,7 @@ describe("Login", () => {
   })
   describe("when logged in", () => {
     it("renders profile link", () => {
-      const { getByText } = render(<Login isLogIn />);
+      const { getByText } = render(<Login isLoggedIn  />);
       expect(getByText("go to profile")).toBeInTheDocument()
     });
   });
