@@ -4,9 +4,18 @@ import {render} from '@testing-library/react'
 
 
 describe("Login", () => {
-  it("renders correctly", () => {
-    const { getByLabelText } = render(<Login/>)
-    expect(getByLabelText('Email:')).toHaveAttribute('name','email')
-    expect(getByLabelText('Password:')).toHaveAttribute('name','password')
+  describe("when logged out", () => {
+    it("renders form", () => {
+      const { getByLabelText } = render(<Login />);
+      expect(getByLabelText("Email:")).toHaveAttribute("name", "email");
+      expect(getByLabelText("Password:")).toHaveAttribute("name", "password");
+    });
+
   })
-})
+  describe("when logged in", () => {
+    it("renders profile link", () => {
+      const { getByText } = render(<Login isLogIn />);
+      expect(getByText("go to profile")).toBeInTheDocument()
+    });
+  });
+});
