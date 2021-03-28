@@ -4,14 +4,17 @@ import {LoginWithAuth} from './Login.jsx';
 import {RegistrationWithAuth} from './Registration.jsx';
 import {Map} from './Map';
 import {ProfileWithAuth} from './Profile';
+import {HeaderWithAuth} from './Header';
 import {withAuth} from './Auth';
 import PropTypes from 'prop-types';
+
 
 const Pages = {
   login: (props) => <LoginWithAuth {...props}/>,
   registration: (props) => <RegistrationWithAuth {...props}/>,
   map: (props) => <Map {...props}/>,
-  profile: (props) => <ProfileWithAuth {...props}/>
+  profile: (props) => <ProfileWithAuth {...props}/>,
+  header: (props) => <HeaderWithAuth {...props}/>
 }
 
 
@@ -37,38 +40,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <button onClick={() => {
-                      this.navigateTo("map");
-                    }}>
-                  Карта
-                </button>
-              </li>
-              <li>
-                <button onClick={() => {
-                      this.navigateTo("profile");
-                    }}>
-                  Профиль
-                </button>
-              </li>
-              <li>
-                <button onClick={this.logout}>
-                  Выйти
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <section>
-            {Pages[this.state.currentPage]({ navigate: this.navigateTo })}
-          </section>
-        </main>
-      </div>
+      <main>
+        <section>
+          {Pages['header']({ navigate: this.navigateTo, logout: this.logout})}
+        </section>
+        <section>
+          {Pages[this.state.currentPage]({ navigate: this.navigateTo })}
+        </section>
+      </main>
     )
   }
 }
